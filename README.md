@@ -1,93 +1,93 @@
-📒 Address Book Management System (C Project)
+# Address Book – Using C
 
-A simple and modular Address Book Management System written in C, designed to store, search, edit, delete, and sort contacts. All contact data is stored permanently in a CSV file.
+## Project Overview
 
-🚀 Features ✔️ Create Contact
+The Address Book is a menu-driven, file-based application implemented in C that allows users to manage contact information efficiently.
 
-Add a new contact with:
+This project demonstrates:
 
-Name
+* Structured programming
+* File handling
+* Input validation
+* Modular design using arrays and structures in C
 
-Phone Number
+The system enables users to:
 
-Email
+* Create contacts
+* Search contacts
+* Edit contacts
+* Delete contacts
+* List contacts
+* Store data permanently using files
 
-🔍 Search Contact
+---
 
-Search by:
+## Objectives
 
-Name
+* Implement full Create, Read, Update, Delete operations
+* Store and retrieve contact data using file handling
+* Prevent duplicate phone numbers and email IDs
+* Validate user input for data integrity
+* Maintain persistent storage across executions
+* Practice modular programming using header and source files
 
-Phone Number
+---
 
-Email
+## Technologies Used
 
-✏️ Edit Contact
+* C Programming
+* GCC Compiler
+* Makefile
+* Text File Handling
+* Structures & Arrays
 
-Modify any existing contact details.
+---
 
-🗑️ Delete Contact
+## Core Concepts
 
-Remove a contact from the system.
+* Structures (`struct`)
+* Modular Programming
+* File Handling (`fopen`, `fprintf`, `fscanf`)
+* String Manipulation (`strcpy`, `strcmp`, `strstr`)
+* Input Validation
+* Linear Search Algorithm
+* Array Shifting for Deletion
+* Static Memory Allocation
 
-💾 Save Contacts
+---
 
-All data is saved in contacts.csv.
+## Features
 
-📜 List Contacts
+* Create new contact
+* Search contact by name, phone, or email
+* Edit contact details
+* Delete contact
+* List all contacts in formatted table view
+* Automatic loading of contacts at startup
+* Save contacts to file
+* Mobile number validation (10 digits, unique)
+* Email validation (`.com` format, unique)
 
-View all contacts with sorting options:
+---
 
-Sort by Name
+## File Storage Format
 
-Sort by Phone Number
+Contacts are stored in `contacts.txt` in CSV-like format:
 
-Sort by Email
+```txt
+3
+John Doe,1234567890,john@gmail.com
+Alice,9876543210,alice@gmail.com
+```
 
-🔄 Persistent Storage
+* First line → Number of contacts
+* Remaining lines → `name,phone,email`
 
-Contacts remain saved even after restarting the program (CSV-based storage).
+---
 
-📂 File Structure
+## How to Compile
 
-Your project contains the following files:
-
-a.out contact.c contact.h contacts.csv file.c file.h main.c populate.c populate.h strings.c
-
-🛠️ Modules Overview
-
-main.c → Entry point, menu handling
-
-contact.c / contact.h → Contact creation, editing, deleting
-
-strings.c → Custom string-handling utilities
-
-file.c / file.h → File reading/writing (CSV operations)
-
-populate.c / populate.h → Load contacts from CSV into memory
-
-⚙️ Compilation
-
-Use this command to compile the entire project:
-
-gcc *.c
-
-▶️ How to Run
-
-After compilation, run the program using:
-
-./a.out
-
-📤 Contact Storage Format (contacts.csv)
-
-Example:
-
-Name,Phone,Email John Doe,9876543210,john@example.com Alice,9123456789,alice@example.com
-
-📘 Optional Future Improvements
-
-Export as JSON
-
-Import CSV from external sources
-
-GUI-based version
+```bash
+gcc main.c contact.c file.c -o addressbook
+./addressbook
+```
